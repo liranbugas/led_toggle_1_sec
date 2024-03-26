@@ -77,7 +77,7 @@ Disassembly of section .text:
  80001d0:	080003bc 	.word	0x080003bc
 
 080001d4 <led_init>:
-static uint32_t* pApb1_en = (uint32_t*) pRcc+Apb1_en;
+static uint32_t* pApb1_en = (uint32_t*) (pRcc+Apb1_en);
 
 void led_init()
 //initialize led to port b and pin 6 as output and enable apb1 for tim2
@@ -93,7 +93,7 @@ void led_init()
  80001e0:	681b      	ldr	r3, [r3, #0]
  80001e2:	f042 0202 	orr.w	r2, r2, #2
  80001e6:	601a      	str	r2, [r3, #0]
-	*pPortBModeReg |=(1<<(Led_Pin*2));
+	*pPortBModeReg |=(1<<(12));
  80001e8:	4b0f      	ldr	r3, [pc, #60]	; (8000228 <led_init+0x54>)
  80001ea:	681b      	ldr	r3, [r3, #0]
  80001ec:	681a      	ldr	r2, [r3, #0]
@@ -109,7 +109,7 @@ void led_init()
  8000200:	681b      	ldr	r3, [r3, #0]
  8000202:	f042 0201 	orr.w	r2, r2, #1
  8000206:	601a      	str	r2, [r3, #0]
-	*pPortBOutReg |=(1<<Led_Pin);
+	*pPortBOutReg |=(1<<6);
  8000208:	4b09      	ldr	r3, [pc, #36]	; (8000230 <led_init+0x5c>)
  800020a:	681b      	ldr	r3, [r3, #0]
  800020c:	681a      	ldr	r2, [r3, #0]
@@ -134,7 +134,7 @@ void led_toggle()
 {
  8000234:	b480      	push	{r7}
  8000236:	af00      	add	r7, sp, #0
-	*pPortBOutReg ^=(1<<Led_Pin);
+	*pPortBOutReg ^=(1<<6);
  8000238:	4b06      	ldr	r3, [pc, #24]	; (8000254 <led_toggle+0x20>)
  800023a:	681b      	ldr	r3, [r3, #0]
  800023c:	681a      	ldr	r2, [r3, #0]
@@ -151,8 +151,8 @@ void led_toggle()
  8000254:	20000004 	.word	0x20000004
 
 08000258 <timer_ini>:
-static uint32_t* pTim2_Arr=(uint32_t*) pTim2 +Tim2_arr;
-static uint32_t* pTim2_Sr =(uint32_t*) pTim2+Tim2_sr;
+static uint32_t* pTim2_Arr=(uint32_t*) (pTim2 +Tim2_arr);
+static uint32_t* pTim2_Sr =(uint32_t*) (pTim2+Tim2_sr);
 
 void timer_ini()
 //initialize timer2 parameters and 1 second delay

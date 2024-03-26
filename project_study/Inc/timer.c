@@ -13,10 +13,10 @@
 #define	Tim2_arr 0x2C
 #define Tim2_sr  0x10
 
-static uint32_t* pTim2_Psc=(uint32_t*) pTim2+Tim2_psc;
+static uint32_t* pTim2_Psc=(uint32_t*) (pTim2+Tim2_psc);
 static uint32_t* pTim2_Cr=(uint32_t*)  pTim2;
-static uint32_t* pTim2_Arr=(uint32_t*) pTim2 +Tim2_arr;
-static uint32_t* pTim2_Sr =(uint32_t*) pTim2+Tim2_sr;
+static uint32_t* pTim2_Arr=(uint32_t*) (pTim2 +Tim2_arr);
+static uint32_t* pTim2_Sr =(uint32_t*) (pTim2+Tim2_sr);
 
 void timer_ini()
 //initialize timer2 parameters and 1 second delay
