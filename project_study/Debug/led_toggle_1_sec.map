@@ -655,11 +655,11 @@ LOAD c:/programs/stm32cubeide_1.12.1/stm32cubeide/plugins/com.st.stm32cube.ide.m
  .debug_macro   0x0000000000000ff0       0x22 ./Inc/timer.o
  .debug_macro   0x0000000000001012       0x80 ./Src/main.o
 
-.debug_line     0x0000000000000000      0xc06
+.debug_line     0x0000000000000000      0xc04
  .debug_line    0x0000000000000000      0x3c1 ./Inc/led.o
  .debug_line    0x00000000000003c1      0x3f1 ./Inc/timer.o
- .debug_line    0x00000000000007b2      0x3d0 ./Src/main.o
- .debug_line    0x0000000000000b82       0x84 ./Startup/startup_stm32f401retx.o
+ .debug_line    0x00000000000007b2      0x3ce ./Src/main.o
+ .debug_line    0x0000000000000b80       0x84 ./Startup/startup_stm32f401retx.o
 
 .debug_str      0x0000000000000000     0x3c71
  .debug_str     0x0000000000000000     0x3b47 ./Inc/led.o

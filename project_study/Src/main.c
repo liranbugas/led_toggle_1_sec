@@ -28,40 +28,6 @@
 
 int main(void)
 {
-	//declare port c and clock registers
-	//hsi 16 mhz = internal clock
-	//time delay (sec) = arr*(psc+1)/timer input frequency
-
-	//uint32_t* pClkCntrReg = (uint32_t *)(pRcc + 0x30);
-
-	//declare port c registers
-
-	//uint32_t* pPortBModeReg = (uint32_t*)pGpioB;
-	//uint32_t* pPortBOutReg = (uint32_t*)(pGpioB + 0x14);
-
-
-	//declare tim2 registers
-//	uint32_t* pApb1_en = (uint32_t *)(pRcc +0x40);
-//	uint32_t* pTim2_Psc =(uint32_t *)(pTim2+0x28);
-//	uint32_t* pTim2_Cr= (uint32_t *) (pTim2);
-//	uint32_t* pTim2_Arr= (uint32_t *)(pTim2 +0x2C);
-//	uint32_t* pTim2_Sr = (uint32_t *)(pTim2+0x10);
-	//enable gpio B and set port 6 as output
-//	*pClkCntrReg |=(1<<1);
-	//set port a pin 2 as output
-
-//	*pPortBModeReg |=(1<<12);
-	//set delay of 1 second
-
-//	*pApb1_en |=(1<<0);
-//	*pTim2_Psc |= 0x3E7;
-//	*pTim2_Arr &=~0xFFFFFFFF;
-//	*pTim2_Arr |= 0x3E80;
-
-	//enable timer
-//	*pTim2_Cr |=(1<<0);
-
-//	*pPortBOutReg |=(1<<6);
 
 	led_init();
 	timer_ini();
@@ -70,13 +36,12 @@ int main(void)
 	while(1)
 	{
 		//check if the interrupt on
-//					int temp = (*pTim2_Sr)&(0x1);
+
 					bool temp = timer_check();
 					if(temp)
 					{
 						led_toggle();
-//						*pPortBOutReg ^=(1<<6);
-//						*pTim2_Sr &=0;
+
 					}
 	}
 }
